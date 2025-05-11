@@ -1,12 +1,12 @@
-# Importando o módulo 'winsound' para tocar sons (apenas no Windows)
+# Importando o módulo 'winsound' para tocar sons (apenas no Windows).
 import winsound
-# Importando o módulo 'time' para controle de tempo (pausas)
+# Importando o módulo 'time' para controle de tempo (pausas).
 import time
-#Importando a biblioteca OS para criar arquivo
+#Importando a biblioteca OS para criar arquivo.
 import os
 
 
-# DICIONÁRIO DO CÓDIGO MORSE: associa cada letra e número ao seu equivalente em código Morse
+# DICIONÁRIO DO CÓDIGO MORSE: associa cada letra e número ao seu equivalente em código Morse.
 codigos = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
            'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
            'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
@@ -16,49 +16,50 @@ codigos = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..',
            'Y': '-.--', 'Z': '--..',
            '0': '-----', '1': '.----', '2': '..---', '3': '...--',
            '4': '....-', '5': '.....', '6': '-....', '7': '--...',
-           '8': '---..', '9': '----.', ' ': '/'  # Espaço tratado de forma especial
+           '8': '---..', '9': '----.', ' ': '/'  # Espaço tratado de forma especial.
           }
 
-# INVERSÃO DO CÓDIGO: cria um novo dicionário com os valores e chaves trocados, para decodificação
+# INVERSÃO DO CÓDIGO: cria um novo dicionário com os valores e chaves trocados, para decodificação.
 mrs_codigo = {v: k for k, v in codigos.items()}
 
 #Criar a pasta para salvar os arquivos resultandes.
 nome_pasta = "morse"
 
-# caminho ou directório
+# caminho ou directório.
 caminho = f"C:\\{nome_pasta}\\"
 
 if not os.path.exists(caminho):
     os.mkdir(caminho)
 
-# função para criar arquivo
+# função para criar arquivo.
 def criar_arquivo(nome_arquivo, ext, conteudo):
     with open(caminho+nome_arquivo+ext, "w") as arq_morse:
         arq_morse.write(conteudo)
 
-# Função principal do programa
+# Função principal do programa.
 def work():
     print("-"*102)
-    print("Escolhe uma opção que pretendes  \n")
+    print("Escolhe a opção que pretendes  \n")
     print("1: Converter texto em código morse")
     print("2: Converter código morse em texto")
     print("3: Converter código morse em áudio")
     print("-"*102)
 
-    # Solicita ao usuário que escolha uma das opções
+    # Solicita ao usuário que escolha uma das opções.
     escolha = int(input("Insira a opção que pretendes: "))
 
     if (escolha == 1):
-        # Opção 1: texto para código Morse
-        mensagem = str(input("Texto para ser codificado em morse: \n").upper())
+        # Opção 1: Converter texto para código Morse.
+        mensagem = str(input("Insra o texto para ser codificado em morse: \n").upper())
 
         try:
-            # Converte cada caractere em Morse usando o dicionário
+            # Converte cada caractere em Morse usando o dicionário.
             morse = " ".join(codigos[m] for m in mensagem)
 
             print("Mensagem inserida: \n" + mensagem)
             print("Mensagem saida em código morse: \n" + morse)
 
+            # Cria um arquivo em .txt da coversão.
             conteudo = f"Texto normal => {mensagem}\nCódigo morse => {morse}"
             criar_arquivo(mensagem, ".txt", conteudo)
 
@@ -85,6 +86,7 @@ def work():
             print("mensagem inserida: \n" + mensagem)
             print("mensagem saida em código morse: \n" + texto)
 
+            # Cria um arquivo em .txt da coversão.
             conteudo = f"Texto normal => {mensagem}\nCódigo morse => {texto}"    
             criar_arquivo(texto+"-morse", ".txt", conteudo)
             
