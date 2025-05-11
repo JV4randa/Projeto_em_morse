@@ -2,7 +2,7 @@
 import winsound
 # Importando o módulo 'time' para controle de tempo (pausas)
 import time
-#Importando a biblioteca OS
+#Importando a biblioteca OS para criar arquivo
 import os
 
 
@@ -38,10 +38,12 @@ def criar_arquivo(nome_arquivo, ext, conteudo):
 
 # Função principal do programa
 def work():
-    print("############# Escolhe uma opção que pretendes ############# \n")
+    print("-"*102)
+    print("Escolhe uma opção que pretendes  \n")
     print("1: Converter texto em código morse")
     print("2: Converter código morse em texto")
     print("3: Converter código morse em áudio")
+    print("-"*102)
 
     # Solicita ao usuário que escolha uma das opções
     escolha = int(input("Insira a opção que pretendes: "))
