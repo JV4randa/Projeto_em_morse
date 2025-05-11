@@ -85,13 +85,13 @@ def work():
             print("mensagem inserida: \n" + mensagem)
             print("mensagem saida em código morse: \n" + texto)
 
-            conteudo = f"Texto normal => {mensagem}\nCódigo morse => {morse}"    
-            criar_arquivo(texto+"em_morse", ".txt", conteudo)
+            conteudo = f"Texto normal => {mensagem}\nCódigo morse => {texto}"    
+            criar_arquivo(texto+"-morse", ".txt", conteudo)
             
         except:
             print("Erro ao traduzir")
         #Opção para executar novamente.
-        opcao = input("Desejas continuar?   S/N  \n").upper()
+        opcao = input("Desejas continuar?   S/N  \n\n").upper()
         if opcao == "S":
             # Chama a função novamente
             work()
