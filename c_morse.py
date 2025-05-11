@@ -39,14 +39,14 @@ def criar_arquivo(nome_arquivo, ext, conteudo):
 # Função principal do programa.
 def work():
     print("-"*102)
-    print("Escolhe a opção que pretendes  \n")
-    print("1: Converter texto em código morse")
-    print("2: Converter código morse em texto")
-    print("3: Converter código morse em áudio")
+    print(" "*28,"Escolhe a opção que pretendes  \n")
+    print(" "*25,"1: Converter texto em código morse")
+    print(" "*25,"2: Converter código morse em texto")
+    print(" "*25,"3: Converter código morse em áudio")
     print("-"*102)
 
     # Solicita ao usuário que escolha uma das opções.
-    escolha = int(input("Insira a opção que pretendes: "))
+    escolha = int(input("Insira a opção que pretendes:"))
 
     if (escolha == 1):
         # Opção 1: Converter texto para código Morse.
